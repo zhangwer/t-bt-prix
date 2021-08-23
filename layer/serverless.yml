@@ -1,0 +1,13 @@
+org: '1256960353'
+app: bt-prix
+stage: dev
+component: layer
+name: bt-prix-layer
+inputs:
+  name: bt-prix-layer
+  region: ap-guangzhou
+  src:
+    src: ../node_modules
+    targetDir: /node_modules
+  runtimes:
+    - Nodejs12.16

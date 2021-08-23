@@ -1,0 +1,35 @@
+component: http
+name: http-nextjs-DEiJCSAYg
+inputs:
+  src:
+    dist: ./
+    hook: npm run build
+    exclude:
+      - .env
+  faas:
+    runtime: Nodejs12.16
+    framework: nextjs
+    name: '${name}'
+    eip: false
+    timeout: 3
+    memorySize: 512
+    layers:
+      - name: '${output:${stage}:${app}:bt-prix-layer.name}'
+        version: '${output:${stage}:${app}:bt-prix-layer.version}'
+  apigw:
+    protocols:
+      - http
+      - https
+    timeout: 60
+    environment: release
+    customDomains: []
+  region: ap-guangzhou
+  isAutoCiDeploy: false
+  static:
+    cos:
+      bucket: bt-prix-dev-1256960353
+      acl:
+        permissions: public-read
+org: '1256960353'
+app: bt-prix
+stage: dev
