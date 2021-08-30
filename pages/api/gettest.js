@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 // Replace the uri string with your MongoDB deployment's connection string.
 const uri = "mongodb+srv://unio:UKqT_H2bv7!zU!D@cluster0.hx0my.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
-module.exports = async (req, res) => {
+export default async function gettest (req, res)  {
   try {
     await client.connect();
     const database = client.db('unio');
