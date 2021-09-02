@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 
 const fetcher = (query) =>
-  fetch('/api/graphql', {
+  fetch('http://42.192.235.61/api/graphql', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
